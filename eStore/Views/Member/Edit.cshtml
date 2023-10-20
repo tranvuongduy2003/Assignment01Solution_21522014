@@ -1,0 +1,54 @@
+﻿@model BusinessObject.Member
+
+
+<form asp-controller="Member" asp-action="Edit" method="POST">
+    <br/>
+    <div class="container border p-3">
+        <h1 class="text-white text-center">Edit Member</h1>
+
+        <hr/>
+        <div class="row">
+            <input asp-for="MemberId" class="form-control" hidden/>
+            <div class="col-2">
+                <label class="control-label pt-2" style="font-size:20px;"> Email</label>
+            </div>
+            <div class="col-10 pb-3">
+                <input type="email" asp-for="Email" class="form-control" disabled/>
+                <span asp-validation-for="Email" class="text-danger"></span>
+            </div>
+            <div class="col-2">
+                <label class="control-label pt-2" style="font-size:20px;"> Company Name</label>
+            </div>
+            <div class="col-10 pb-3">
+                <input type="text" asp-for="CompanyName" class="form-control"/>
+                <span asp-validation-for="CompanyName" class="text-danger"></span>
+            </div>
+            <div class="col-2">
+                <label class="control-label pt-2" style="font-size:20px;"> City</label>
+            </div>
+            <div class="col-10 pb-3">
+                <input type="text" asp-for="City" class="form-control"/>
+                <span asp-validation-for="City" class="text-danger"></span>
+            </div>
+            <div class="col-2">
+                <label class="control-label pt-2" style="font-size:20px;"> Country</label>
+            </div>
+            <div class="col-10 pb-3">
+                <input type="text" asp-for="Country" class="form-control"/>
+                <span asp-validation-for="Country" class="text-danger"></span>
+            </div>
+            
+            <div class="col-5 offset-2">
+                <a asp-action="Index" class="btn-primary btn form-control ">Back to List</a>
+            </div>
+            <div class="col-5">
+                <input type="submit" value="Edit" class="btn btn-success form-control"/>
+            </div>
+        </div>
+    </div>
+</form>
+
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial"/>
+}
